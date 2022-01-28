@@ -1,1 +1,0 @@
-curl -Ls https://github.com/solugo/gitversion-rust/releases/download/$1/gitversion --output gitversion && chmod u+x gitversion && ./gitversion
