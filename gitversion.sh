@@ -1,1 +1,6 @@
-curl -Lso gitversion https://github.com/solugo/gitversion-rust/releases/download/${1:-v0.0.2}/gitversion && chmod u+x gitversion && ./gitversion
+#!/bin/sh
+
+BINARY=$(mktemp)
+TARGET=${GITVERSION:+download/v$GITVERSION}
+URL=https://github.com/solugo/gitversion/releases/${TARGET:-latest/download}/gitversion
+curl $URL -Lso $BINARY && chmod a+x $BINARY && $BINARY
